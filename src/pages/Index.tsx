@@ -6,6 +6,7 @@ import { Integrations } from "@/pages/Integrations";
 import { Workflows } from "@/pages/Workflows";
 import { Executions } from "@/pages/Executions";
 import { Designer } from "@/pages/Designer";
+import RepairAssistant from "@/components/repair/RepairAssistant";
 
 const pageConfig: Record<string, { title: string; subtitle: string }> = {
   "/": { title: "Dashboard", subtitle: "Overview of your automation platform" },
@@ -13,6 +14,7 @@ const pageConfig: Record<string, { title: string; subtitle: string }> = {
   "/workflows": { title: "Workflows", subtitle: "Manage your automation scenarios" },
   "/executions": { title: "Executions", subtitle: "Monitor workflow runs" },
   "/designer": { title: "Designer", subtitle: "Create diagrams and visual designs" },
+  "/repair": { title: "Repair Assistant", subtitle: "L'IA qui répare, pas qui répond" },
   "/analytics": { title: "Analytics", subtitle: "Insights and reports" },
   "/team": { title: "Team", subtitle: "Manage team members" },
   "/api": { title: "API", subtitle: "Developer resources" },
@@ -35,6 +37,12 @@ const Index = () => {
         return <Executions />;
       case "/designer":
         return <Designer />;
+      case "/repair":
+        return (
+          <div className="p-6">
+            <RepairAssistant />
+          </div>
+        );
       default:
         return (
           <div className="p-6 flex items-center justify-center min-h-[60vh]">
@@ -54,7 +62,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Sidebar currentPage={currentPage} onNavigate={setCurrentPage} />
-      
+
       <main className="ml-64 transition-all duration-300">
         <Header title={config.title} subtitle={config.subtitle} />
         <div className="animate-fade-in">{renderPage()}</div>

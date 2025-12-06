@@ -14,6 +14,8 @@ import {
   Users,
   Bell,
   PenTool,
+  Wrench,
+  CreditCard,
 } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -30,11 +32,13 @@ const mainNav: NavItem[] = [
   { icon: Workflow, label: "Workflows", href: "/workflows" },
   { icon: Play, label: "Executions", href: "/executions" },
   { icon: PenTool, label: "Designer", href: "/designer" },
+  { icon: Wrench, label: "Repair", href: "/repair" },
   { icon: BarChart3, label: "Analytics", href: "/analytics" },
 ];
 
 const secondaryNav: NavItem[] = [
   { icon: Users, label: "Team", href: "/team" },
+  { icon: CreditCard, label: "Subscription", href: "/subscription" },
   { icon: Globe, label: "API", href: "/api" },
   { icon: Settings, label: "Settings", href: "/settings" },
   { icon: HelpCircle, label: "Help", href: "/help" },
